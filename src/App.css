@@ -70,7 +70,7 @@
 .Install-box-text-container {
   display: flex;
   flex-direction: row;
-  padding-bottom: calc(1vmax + 2px)
+  padding-bottom: calc(1vmax + 2px);
 }
 
 .Install-box-text {
@@ -79,4 +79,19 @@
 
 .Quick-install-method-spacing {
   padding: 5vh;
+}
+
+.Vertical-bar {
+  border-left: 2px solid #a3a3a3;
+  height: auto;
+  padding-right: 1vw;
+}
+
+.Github-logo {
+  width: 3vmax;
+  height: 3vmax;
+  padding-left: 1vmax;
+  padding-right: 1vmax;
+  padding-top: 1vmax;
+  /* padding-bottom: 1vmax; */
 }

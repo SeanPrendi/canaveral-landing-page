@@ -1,5 +1,6 @@
 import React from "react";
-import logo from "./assets/canaveral-logo.png";
+import canaveral_logo from "./assets/canaveral-logo.png";
+import github_logo from "./assets/github-logo.svg";
 import "./App.css";
 
 function App() {
@@ -7,7 +8,7 @@ function App() {
     <div className="App">
       {/* Quick Install */}
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="canaveral-logo" />
+        <img src={canaveral_logo} className="App-logo" alt="canaveral-logo" />
         <div className="Body-content">
           <div className="Quick-install-container">
             <div className="Quick-install-header">
@@ -69,9 +70,27 @@ function App() {
             </div>
           </div>
           {/* Separating Bar */}
-          <div></div>
+          <div className="Vertical-bar" />
           {/* Explore */}
-          <div className="Info-container">Explore:</div>
+          <div className="Info-container">
+            Explore:
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "flex-start"
+              }}
+            >
+              <img
+                src={github_logo}
+                className="Github-logo"
+                alt="canaveral-logo"
+              />
+              <div style={{ alignSelf: "center", fontSize: "20px", paddingTop: "10px", color: "#a0a0a0" }}>
+                Github.com/jchengjr77/canaveral
+              </div>
+            </div>
+          </div>
         </div>
       </header>
     </div>
