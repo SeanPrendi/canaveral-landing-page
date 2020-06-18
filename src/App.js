@@ -86,9 +86,18 @@ function App() {
                 className="Github-logo"
                 alt="canaveral-logo"
               />
-              <div style={{ alignSelf: "center", fontSize: "20px", paddingTop: "10px", color: "#a0a0a0" }}>
+              <a
+                style={{
+                  alignSelf: "center",
+                  fontSize: "20px",
+                  paddingTop: "10px",
+                  color: "#a0a0a0",
+                  textDecoration: "none"
+                }}
+                href={"https://github.com/jchengjr77/canaveral"}
+              >
                 Github.com/jchengjr77/canaveral
-              </div>
+              </a>
             </div>
           </div>
         </div>
