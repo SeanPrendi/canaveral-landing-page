@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/canaveral-landing-page/static/css/main.6921af3a.chunk.css",
+    "main.js": "/canaveral-landing-page/static/js/main.6910442a.chunk.js",
+    "main.js.map": "/canaveral-landing-page/static/js/main.6910442a.chunk.js.map",
+    "runtime-main.js": "/canaveral-landing-page/static/js/runtime-main.50320cb0.js",
+    "runtime-main.js.map": "/canaveral-landing-page/static/js/runtime-main.50320cb0.js.map",
+    "static/js/2.4601712c.chunk.js": "/canaveral-landing-page/static/js/2.4601712c.chunk.js",
+    "static/js/2.4601712c.chunk.js.map": "/canaveral-landing-page/static/js/2.4601712c.chunk.js.map",
+    "index.html": "/canaveral-landing-page/index.html",
+    "precache-manifest.c672284742766a0eabe9c0305658a07b.js": "/canaveral-landing-page/precache-manifest.c672284742766a0eabe9c0305658a07b.js",
+    "service-worker.js": "/canaveral-landing-page/service-worker.js",
+    "static/css/main.6921af3a.chunk.css.map": "/canaveral-landing-page/static/css/main.6921af3a.chunk.css.map",
+    "static/js/2.4601712c.chunk.js.LICENSE.txt": "/canaveral-landing-page/static/js/2.4601712c.chunk.js.LICENSE.txt",
+    "static/media/canaveral-logo.png": "/canaveral-landing-page/static/media/canaveral-logo.7c4b4684.png",
+    "static/media/github-logo.svg": "/canaveral-landing-page/static/media/github-logo.76d344f0.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.50320cb0.js",
+    "static/js/2.4601712c.chunk.js",
+    "static/css/main.6921af3a.chunk.css",
+    "static/js/main.6910442a.chunk.js"
+  ]
+}
