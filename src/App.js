@@ -22,8 +22,6 @@ const useStyles = makeStyles(theme => ({
   root: {
     width: "100%",
     backgroundColor: theme.palette.background.paper,
-    // borderWidth: 1,
-    // borderStyle: "solid",
     shadows: ["none"]
   },
   list: {
