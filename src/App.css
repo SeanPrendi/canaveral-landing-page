@@ -9,25 +9,119 @@
 }
 
 .App-header {
-  background-color: #FFFFFF;
+  background-color: white;
   min-height: 100vh;
+  min-width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: black;
 }
 
-.App-link {
-  color: #61dafb;
+.Body-content {
+  display: flex;
+  flex-direction: row;
+  padding-top: 5vh;
+  justify-content: space-between;
+  width: 80vw;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Quick-install-container {
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.Info-container {
+  width: 30vw;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.Quick-install-header {
+  padding-bottom: 3vh;
+}
+
+.Title-text {
+  font-size: 4vmin;
+  padding-bottom: 4vh;
+}
+
+.Install-box {
+  width: 48vw;
+  background-color: #f0f0f0;
+  border: 1px;
+  border-radius: 10px;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.Install-box-inner-container {
+  padding-left: 2vmax;
+  padding-top: calc(1vmax + 2px);
+}
+
+.Install-box-text-container {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: calc(1vmax + 2px);
+}
+
+.Install-box-dollar-sign {
+  font-size: 1vmax;
+  color: #a6a6a6;
+}
+
+.Install-box-text {
+  font-size: 1vmax;
+}
+
+.Quick-install-method-spacing {
+  padding: 5vh;
+}
+
+.Vertical-bar {
+  border-left: 2px solid #a3a3a3;
+  height: auto;
+  padding-right: 1vw;
+}
+
+.Github-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.Github-logo {
+  width: 3vmax;
+  height: 3vmax;
+  padding-left: 1vmax;
+  padding-right: 1vmax;
+  padding-top: 1vmax;
+}
+
+.Github-link {
+  align-self: center;
+  font-size: 20px;
+  padding-top: 10px;
+  color: #a0a0a0;
+  text-decoration: none;
+}
+
+.Right-entity-spacing {
+  padding: 2vh;
+}
+
+.Creators-contributors-text {
+  padding-left: 1vw;
+  padding-top: 1vw;
+  display: flex;
+  flex-direction: row;
 }
