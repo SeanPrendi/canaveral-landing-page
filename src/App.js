@@ -59,24 +59,14 @@ function App() {
               <div className="Install-box">
                 <div className="Install-box-inner-container">
                   <div className="Install-box-text-container">
-                    <div
-                      className="Install-box-text"
-                      style={{ color: "#a6a6a6" }}
-                    >
-                      $&nbsp;
-                    </div>
+                    <div className="Install-box-dollar-sign">$&nbsp;</div>
                     <div className="Install-box-text">
                       brew tap jchengjr77/homebrew-private
                       https://github.com/jchengjr77/homebrew-private.git
                     </div>
                   </div>
                   <div className="Install-box-text-container">
-                    <div
-                      className="Install-box-text"
-                      style={{ color: "#a6a6a6" }}
-                    >
-                      $&nbsp;
-                    </div>
+                    <div className="Install-box-dollar-sign">$&nbsp;</div>
                     <div className="Install-box-text">
                       brew install canaveral
                     </div>
@@ -88,23 +78,13 @@ function App() {
               <div className="Install-box">
                 <div className="Install-box-inner-container">
                   <div className="Install-box-text-container">
-                    <div
-                      className="Install-box-text"
-                      style={{ color: "#a6a6a6" }}
-                    >
-                      $&nbsp;
-                    </div>
+                    <div className="Install-box-dollar-sign">$&nbsp;</div>
                     <div className="Install-box-text">
                       go get github.com/jchengjr77/canaveral
                     </div>
                   </div>
                   <div className="Install-box-text-container">
-                    <div
-                      className="Install-box-text"
-                      style={{ color: "#a6a6a6" }}
-                    >
-                      $&nbsp;
-                    </div>
+                    <div className="Install-box-dollar-sign">$&nbsp;</div>
                     <div className="Install-box-text">
                       go install github.com/jchengjr77/canaveral
                     </div>
@@ -118,42 +98,26 @@ function App() {
             <div className="Info-container">
               <div>
                 Explore:
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "row",
-                    justifyContent: "flex-start"
-                  }}
-                >
+                <div className="Github-container">
                   <img
                     src={github_logo}
                     className="Github-logo"
                     alt="canaveral-logo"
                   />
                   <a
-                    style={{
-                      alignSelf: "center",
-                      fontSize: "20px",
-                      paddingTop: "10px",
-                      color: "#a0a0a0",
-                      textDecoration: "none"
-                    }}
+                    className="Github-link"
                     href={"https://github.com/jchengjr77/canaveral"}
                   >
                     Github.com/jchengjr77/canaveral
                   </a>
                 </div>
               </div>
-              <div style={{ padding: "2vh" }} />
+              <div className="Right-entity-spacing" />
               <div>
                 FAQ:
                 <div className={classes.root}>
                   <ExpansionPanel>
-                    <ExpansionPanelSummary
-                      expandIcon={<ChevronRight />}
-                      aria-controls="panel1a-content"
-                      id="panel1a-header"
-                    >
+                    <ExpansionPanelSummary expandIcon={<ChevronRight />}>
                       <Typography className={classes.dropdownHeaderText}>
                         What is Canaveral?
                       </Typography>
@@ -170,65 +134,51 @@ function App() {
                     </ExpansionPanelDetails>
                   </ExpansionPanel>
                   <ExpansionPanel>
-                    <ExpansionPanelSummary
-                      expandIcon={<ChevronRight />}
-                      aria-controls="panel1a-content"
-                      id="panel1a-header"
-                    >
+                    <ExpansionPanelSummary expandIcon={<ChevronRight />}>
                       <Typography className={classes.dropdownHeaderText}>
                         Who is it for?
                       </Typography>
                     </ExpansionPanelSummary>
                     <ExpansionPanelDetails>
                       <Typography className={classes.dropdownText}>
-                        Canaveral is a Command Line Interface (CLI) tool that
-                        can add, remove, and view your projects. It is a tool
-                        built by developers for developers. Don't worry about
-                        where your projects are located, how they are organized,
-                        what their names are, or how to set them up. Canaveral
-                        does that for you.
+                        Canaveral is for anyone who doesn't want to deal with
+                        setting up projects, ensuring that projects are created
+                        the same way every time, or making sure all of their
+                        projects are in the same place. In short, Canaveral is
+                        for developers everywhere.
                       </Typography>
                     </ExpansionPanelDetails>
                   </ExpansionPanel>
                   <ExpansionPanel>
-                    <ExpansionPanelSummary
-                      expandIcon={<ChevronRight />}
-                      aria-controls="panel1a-content"
-                      id="panel1a-header"
-                    >
+                    <ExpansionPanelSummary expandIcon={<ChevronRight />}>
                       <Typography className={classes.dropdownHeaderText}>
                         How do I use it?
                       </Typography>
                     </ExpansionPanelSummary>
                     <ExpansionPanelDetails>
                       <Typography className={classes.dropdownText}>
-                        Canaveral is a Command Line Interface (CLI) tool that
-                        can add, remove, and view your projects. It is a tool
-                        built by developers for developers. Don't worry about
-                        where your projects are located, how they are organized,
-                        what their names are, or how to set them up. Canaveral
-                        does that for you.
+                        Install Canaveral through either of the methods listed
+                        under Quick Install. For more details, click the Github
+                        link above to see our project repo and documentation!
                       </Typography>
                     </ExpansionPanelDetails>
                   </ExpansionPanel>
                 </div>
-                <div style={{ padding: "2vh" }} />
+                <div style={{padding: "1vh"}} />
                 <div>
                   Creators and Contributors
-                  <div style={{ paddingLeft: "1vw", paddingTop: "1vw", display: "flex", flexDirection: "row" }}>
-                    <a
-                      href={"https://github.com/jchengjr77"}
-                    >
+                  <div className="Creators-contributors-text">
+                    <a href={"https://github.com/jchengjr77"}>
                       <Typography className={classes.dropdownHeaderText}>
                         JJ Cheng
                       </Typography>
-                    </a>&nbsp;
+                    </a>
+                    &nbsp;
                     <Typography className={classes.dropdownHeaderText}>
                       and
-                    </Typography>&nbsp;
-                    <a
-                      href={"https://github.com/SeanPrendi"}
-                    >
+                    </Typography>
+                    &nbsp;
+                    <a href={"https://github.com/SeanPrendi"}>
                       <Typography className={classes.dropdownHeaderText}>
                         Sean Prendi
                       </Typography>
