@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import canaveral_logo from "./assets/canaveral-logo.png";
 import github_logo from "./assets/github-logo.svg";
 import {
@@ -40,22 +40,68 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
+function getWindowDimensions() {
+  const { innerWidth: width, innerHeight: height } = window;
+  return {
+    width,
+    height
+  };
+}
+
+function useWindowDimensions() {
+  const [windowDimensions, setWindowDimensions] = useState(
+    getWindowDimensions()
+  );
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowDimensions(getWindowDimensions());
+    }
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return windowDimensions;
+}
+
 function App() {
+  const [expanded, setExpanded] = React.useState(false);
+
+  const handleChange = (panel) => (event, isExpanded) => {
+    setExpanded(isExpanded ? panel : false);
+  };
+  const { height, width } = useWindowDimensions();
   const classes = useStyles();
+  const desktop = height*0.75 < width;
   return (
     <ThemeProvider theme={theme}>
       <div className="App">
         {/* Quick Install */}
         <header className="App-header">
-          <img src={canaveral_logo} className="App-logo" alt="canaveral-logo" />
-          <div className="Body-content">
+          <img
+            src={canaveral_logo}
+            className="App-logo"
+            alt="canaveral-logo"
+            style={{ paddingTop: desktop ? "" : "5vh" }}
+          />
+          <div
+            className="Body-content"
+            style={{ flexDirection: desktop ? "" : "column" }}
+          >
             <div className="Quick-install-container">
               <div className="Quick-install-header">
                 <div className="Title-text">Quick Install:</div>
                 Homebrew
               </div>
-              <div className="Install-box">
-                <div className="Install-box-inner-container">
+              <div
+                className="Install-box"
+                style={{ width: desktop ? "" : "80vw" }}
+              >
+                <div
+                  className="Install-box-inner-container"
+                  style={{ width: desktop ? "" : "80vw" }}
+                >
                   <div className="Install-box-text-container">
                     <div className="Install-box-dollar-sign">$&nbsp;</div>
                     <div className="Install-box-text">
@@ -73,8 +119,14 @@ function App() {
               </div>
               <div className="Quick-install-method-spacing" />
               <div className="Quick-install-header">Go Modules</div>
-              <div className="Install-box">
-                <div className="Install-box-inner-container">
+              <div
+                className="Install-box"
+                style={{ width: desktop ? "" : "80vw" }}
+              >
+                <div
+                  className="Install-box-inner-container"
+                  style={{ width: desktop ? "" : "80vw" }}
+                >
                   <div className="Install-box-text-container">
                     <div className="Install-box-dollar-sign">$&nbsp;</div>
                     <div className="Install-box-text">
@@ -91,30 +143,46 @@ function App() {
               </div>
             </div>
             {/* Separating Bar */}
-            <div className="Vertical-bar" />
+            {desktop && <div className="Vertical-bar" />}
+            {!desktop && (
+              <div>
+                <div style={{ padding: "3vmin" }} />
+                <div className="Horizontal-bar" />
+                <div style={{ padding: "3vmin" }} />
+              </div>
+            )}
             {/* Explore */}
             <div className="Info-container">
               <div>
                 Explore:
                 <div className="Github-container">
-                  <img
-                    src={github_logo}
-                    className="Github-logo"
-                    alt="canaveral-logo"
-                  />
+                  {desktop && (
+                    <a href="https://github.com/jchengjr77/canaveral">
+                      <img
+                        src={github_logo}
+                        className="Github-logo"
+                        alt="canaveral-logo"
+                      />
+                    </a>
+                  )}
                   <a
                     className="Github-link"
                     href={"https://github.com/jchengjr77/canaveral"}
                   >
-                    Github.com/jchengjr77/canaveral
+                    <Typography className={classes.dropdownHeaderText} style={{fontSize: desktop ? "" : "5vmin"}}>
+                      Github.com/jchengjr77/canaveral
+                    </Typography>
                   </a>
                 </div>
               </div>
               <div className="Right-entity-spacing" />
               <div>
                 FAQ:
-                <div className={classes.root}>
-                  <ExpansionPanel>
+                <div
+                  className={classes.root}
+                  style={{ width: desktop ? "" : "80vw" }}
+                >
+                  <ExpansionPanel expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
                     <ExpansionPanelSummary expandIcon={<ChevronRight />}>
                       <Typography className={classes.dropdownHeaderText}>
                         What is Canaveral?
@@ -131,7 +199,7 @@ function App() {
                       </Typography>
                     </ExpansionPanelDetails>
                   </ExpansionPanel>
-                  <ExpansionPanel>
+                  <ExpansionPanel expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
                     <ExpansionPanelSummary expandIcon={<ChevronRight />}>
                       <Typography className={classes.dropdownHeaderText}>
                         Who is it for?
@@ -147,7 +215,7 @@ function App() {
                       </Typography>
                     </ExpansionPanelDetails>
                   </ExpansionPanel>
-                  <ExpansionPanel>
+                  <ExpansionPanel expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
                     <ExpansionPanelSummary expandIcon={<ChevronRight />}>
                       <Typography className={classes.dropdownHeaderText}>
                         How do I use it?
@@ -162,8 +230,8 @@ function App() {
                     </ExpansionPanelDetails>
                   </ExpansionPanel>
                 </div>
-                <div style={{padding: "1vh"}} />
-                <div>
+                <div style={{ padding: "1vh" }} />
+                <div style={{ width: desktop ? "" : "80vw" }}>
                   Creators and Contributors
                   <div className="Creators-contributors-text">
                     <a href={"https://github.com/jchengjr77"}>
@@ -197,6 +265,7 @@ function App() {
               </div>
             </div>
           </div>
+          <div style={{ paddingTop: desktop ? "" : "5vh" }} />
         </header>
       </div>
     </ThemeProvider>

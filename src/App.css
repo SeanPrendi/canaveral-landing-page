@@ -47,7 +47,7 @@
 }
 
 .Title-text {
-  font-size: 4vmin;
+  font-size: max(4vmin, 3vh);
   padding-bottom: 4vh;
 }
 
@@ -84,13 +84,22 @@
 }
 
 .Quick-install-method-spacing {
-  padding: 5vh;
+  padding: 5vmin;
 }
 
 .Vertical-bar {
   border-left: 2px solid #a3a3a3;
   height: auto;
   padding-right: 1vw;
+}
+
+.Horizontal-bar {
+  display: block;
+  height: 2px;
+  border: 0;
+  border-top: 2px solid #a3a3a3;
+  margin: 1em 0;
+  padding: 0;
 }
 
 .Github-container {
