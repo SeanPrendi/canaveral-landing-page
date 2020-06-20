@@ -16,6 +16,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  font-family: 'Victor Mono';
   font-size: calc(10px + 2vmin);
   color: black;
 }
@@ -80,7 +81,7 @@
 }
 
 .Install-box-text {
-  font-size: 1vmax;
+  font-size: calc(1vmax - 1px);
 }
 
 .Quick-install-method-spacing {

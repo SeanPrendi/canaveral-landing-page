@@ -31,12 +31,14 @@ const useStyles = makeStyles(theme => ({
   dropdownHeaderText: {
     fontSize: theme.typography.pxToRem(18),
     fontWeight: theme.typography.fontWeightRegular,
-    color: "#878787"
+    color: "#878787",
+    fontFamily: "Victor Mono"
   },
   dropdownText: {
     fontSize: theme.typography.pxToRem(14),
     fontWeight: theme.typography.fontWeightRegular,
-    color: "#878787"
+    color: "#878787",
+    fontFamily: "Victor Mono"
   }
 }));
 
@@ -68,12 +70,12 @@ function useWindowDimensions() {
 function App() {
   const [expanded, setExpanded] = React.useState(false);
 
-  const handleChange = (panel) => (event, isExpanded) => {
+  const handleChange = panel => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
   };
   const { height, width } = useWindowDimensions();
   const classes = useStyles();
-  const desktop = height*0.75 < width;
+  const desktop = height * 0.75 < width;
   return (
     <ThemeProvider theme={theme}>
       <div className="App">
@@ -169,7 +171,10 @@ function App() {
                     className="Github-link"
                     href={"https://github.com/jchengjr77/canaveral"}
                   >
-                    <Typography className={classes.dropdownHeaderText} style={{fontSize: desktop ? "" : "5vmin"}}>
+                    <Typography
+                      className={classes.dropdownHeaderText}
+                      style={{ fontSize: desktop ? "" : "4vmin" }}
+                    >
                       Github.com/jchengjr77/canaveral
                     </Typography>
                   </a>
@@ -182,7 +187,10 @@ function App() {
                   className={classes.root}
                   style={{ width: desktop ? "" : "80vw" }}
                 >
-                  <ExpansionPanel expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+                  <ExpansionPanel
+                    expanded={expanded === "panel1"}
+                    onChange={handleChange("panel1")}
+                  >
                     <ExpansionPanelSummary expandIcon={<ChevronRight />}>
                       <Typography className={classes.dropdownHeaderText}>
                         What is Canaveral?
@@ -199,7 +207,10 @@ function App() {
                       </Typography>
                     </ExpansionPanelDetails>
                   </ExpansionPanel>
-                  <ExpansionPanel expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
+                  <ExpansionPanel
+                    expanded={expanded === "panel2"}
+                    onChange={handleChange("panel2")}
+                  >
                     <ExpansionPanelSummary expandIcon={<ChevronRight />}>
                       <Typography className={classes.dropdownHeaderText}>
                         Who is it for?
@@ -215,7 +226,10 @@ function App() {
                       </Typography>
                     </ExpansionPanelDetails>
                   </ExpansionPanel>
-                  <ExpansionPanel expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
+                  <ExpansionPanel
+                    expanded={expanded === "panel3"}
+                    onChange={handleChange("panel3")}
+                  >
                     <ExpansionPanelSummary expandIcon={<ChevronRight />}>
                       <Typography className={classes.dropdownHeaderText}>
                         How do I use it?
