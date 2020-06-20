@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/canaveral-landing-page/precache-manifest.c672284742766a0eabe9c0305658a07b.js"
+  "/canaveral-landing-page/precache-manifest.50dcb775e7832af295fdef15c2ef937c.js"
 );
 
 self.addEventListener('message', (event) => {
